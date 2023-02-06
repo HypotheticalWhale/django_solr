@@ -1,0 +1,50 @@
+<div class="header">
+    <h1>Search Results</h1>
+</div>
+<div class="container">
+    {% if results %}
+    {% for result in results %}
+        <div class="result-item">
+        <div class="result-title">{{ result.title }}</div>
+        <div class="result-content">{{ result.text }}</div>
+        <div class="result-content">Sentiment: {{ result.sentiment }}</div>
+        </div>
+    {% endfor %}
+    {% else %}
+    <div>No results found.</div>
+    {% endif %}
+</div>
+
+
+<style>
+    .header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    }
+
+    .header h1 {
+    margin: 0;
+    }
+
+    .result-item {
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px lightgray;
+    background-color: #fff;
+    }
+
+    .result-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+
+    .result-content {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 10px;
+    }
+</style>
